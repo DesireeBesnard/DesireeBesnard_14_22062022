@@ -3,8 +3,6 @@ import Form from '../../components/Form'
 
 function CreateEmployee() {
 
-    
-
     return (
         <>
             <div className="title">

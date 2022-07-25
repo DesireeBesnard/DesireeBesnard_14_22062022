@@ -1,14 +1,18 @@
+import React from "react";
 import DatePicker from '../DatePicker'
 import "./style.css"
+import { validForm } from "../../services/helper"
 
 function Form() {
 
-    const saveEmployee = () => {
-        console.log('Je suis la fonction SaveEemployee')
+    const saveEmployee = e => {
+        e.preventDefault()
+        console.log('submission prevented')
     }
+
     return (
         <>
-            <form>
+            <form onSubmit={saveEmployee}>
                 <label htmlFor="first-name">First Name</label>
                 <input type="text" id="first-name" />
 
@@ -45,8 +49,8 @@ function Form() {
                     <option>Human Resources</option>
                     <option>Legal</option>
                 </select>
+                <button type="submit">Save</button>
             </form>
-            <button onClick={saveEmployee}>Save</button>
         </>
     )
 }

@@ -8,7 +8,6 @@ const initialState = {
 export const employeesSlice = createSlice({
   name: 'employees',
   initialState,
-  // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
     addEmployee: (state, payload) => {
       state.employees.push(payload)
