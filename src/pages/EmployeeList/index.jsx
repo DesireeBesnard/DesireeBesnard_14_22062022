@@ -1,4 +1,8 @@
+import React, { useState } from 'react';
+import ArrayData from "../../components/ArrayData"
+
 function EmployeeList() {
+
     return (
         <div>
             <h1>Current Employees</h1>
@@ -18,17 +22,6 @@ function EmployeeList() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Désirée</td>
-                        <td>Besnard</td>
-                        <td>01/07/2022</td>
-                        <td>25</td>
-                        <td>31/10/1995</td>
-                        <td>Avenue de l'observatoire</td>
-                        <td>Besançon</td>
-                        <td>Doubs</td>
-                        <td>25000</td>
-                    </tr>
                 </tbody>
 
             </table>

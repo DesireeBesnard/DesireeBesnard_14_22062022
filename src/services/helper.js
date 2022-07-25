@@ -1,4 +1,5 @@
-const validForm = (form) => {
+export const validForm = (form) => {
+    
     if (form.firstName.lenght === 0) {
         return false
     } else if (form.lastName.length === 0) {
@@ -7,7 +8,7 @@ const validForm = (form) => {
         return false
     } else if (form.department.length === 0) {
         return false
-    } else if (form.dateOfBirth.length === 0) {
+    } else if (form.birthDate.length === 0) {
         return false
     } else if (form.street.length === 0) {
         return false
