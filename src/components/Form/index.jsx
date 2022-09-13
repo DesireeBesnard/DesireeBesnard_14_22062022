@@ -1,9 +1,23 @@
-import React from "react";
-import DatePicker from '../DatePicker'
+import React, { useState } from "react"
+import DatePicker from "react-datepicker"
+import "react-datepicker/dist/react-datepicker.css";
 import "./style.css"
 import { validForm } from "../../services/helper"
 
 function Form() {
+
+    
+
+    const [birthDate, setBirthDate] = useState(new Date())
+    const [startDate, setStartDate] = useState(new Date())
+
+    const handleBirthDate = (value) => {
+        setBirthDate(value)
+    }
+
+    const handleStartDate = (value) => {
+        setStartDate(value)
+    }
 
     const saveEmployee = e => {
         e.preventDefault()
@@ -20,10 +34,25 @@ function Form() {
                 <input type="text" id="last-name" />
 
                 <label htmlFor="date-of-birth">Date of Birth</label>
-                < DatePicker id="date-of-birth" />
+                < DatePicker 
+                    selected={birthDate}
+                    onChange={handleBirthDate}
+                    dateFormat="dd/MM/yyyy"
+                    showMonthDropdown
+                    showYearDropdown
+                    dropdownMode="select"
+                />
+                
 
                 <label htmlFor="start-date">Start Date</label>
-                < DatePicker id="start-date"/>
+                < DatePicker 
+                    selected={startDate}
+                    onChange={handleStartDate}
+                    dateFormat="dd/MM/yyyy"
+                    showMonthDropdown
+                    showYearDropdown
+                    dropdownMode="select"
+                />
 
                 <fieldset className="address">
                     <legend>Address</legend>

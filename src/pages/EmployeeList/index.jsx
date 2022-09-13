@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ArrayData from "../../components/ArrayData"
 
-function EmployeeList() {
+/*function EmployeeList() {
 
     return (
         <div>
@@ -29,5 +29,5 @@ function EmployeeList() {
     )
 }
 
-export default EmployeeList
+export default EmployeeList*/
 

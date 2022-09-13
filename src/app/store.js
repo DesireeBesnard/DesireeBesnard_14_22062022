@@ -1,8 +1,7 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import employeesReducer from '../features/employees/employeeSlice.js';
-import { persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist'
+import { persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import { combineReducers } from "redux"
 
 
 const persistConfig = {
@@ -18,15 +17,7 @@ const reducer = combineReducers({
 const persistedReducer = persistReducer(persistConfig, reducer)
 
 export const store = configureStore({
-  reducer: {
-    reducer: persistedReducer,
-  },
-  middleware: (getDefaultMiddleware) =>
-  getDefaultMiddleware({
-    serializableCheck: {
-      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-    }
-  })
+  reducer: persistedReducer
 })
 
 
