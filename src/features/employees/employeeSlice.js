@@ -4,7 +4,6 @@ const initialState = {
   employees: []
 };
 
-
 export const employeesSlice = createSlice({
   name: 'employees',
   initialState,
@@ -16,12 +15,12 @@ export const employeesSlice = createSlice({
       const index = state.employees.findIndex(employee => {
         return employee.firstName === payload.firstName && employee.birthDate === payload.birthDay 
       })
-      if(index > -1) {
+      if(index !== -1) {
         state.employees.splice(index, 1)
       }
     }
   }
 });
 
-export const { addEmployees, deleteEmployee } = employeesSlice.actions;
+export const { addEmployee, deleteEmployee } = employeesSlice.actions;
 export default employeesSlice.reducer;
