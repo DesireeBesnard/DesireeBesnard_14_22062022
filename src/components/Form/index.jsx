@@ -12,12 +12,8 @@ import { addEmployee } from "../../features/employees/employeeSlice";
 
 function Form() {
 
-
-    const userRef = useRef()
-    const errRef = useRef()
     const dispatch = useDispatch()
     const [stateOptions, setStateOptions] = useState([])
-    const [errMsg, setErrMsg] = useState("")
 
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
@@ -29,11 +25,13 @@ function Form() {
     const [zipCode, setZipCode] = useState("")
     const [department, setDepartment] = useState("")
     
+    
     useEffect(() => {
 
         getStateOptions()
             .then(res => setStateOptions(res))
     }, [])
+
 
     const handleSubmit = e => {
 
@@ -56,17 +54,12 @@ function Form() {
 
     return (
         <>
-            <section>
-                <p ref={errRef} className={ errMsg? "errmsg" : "offscreen"} aria-live= "assertive">{errMsg}</p>
-            </section>
-
             <form onSubmit={handleSubmit}>
 
                 <label htmlFor="first-name">First Name</label>
                 <input 
                     type="text" 
                     id="first-name" 
-                    ref={userRef} 
                     onChange={e => setFirstName(e.target.value)} 
                 />
 
