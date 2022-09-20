@@ -1,4 +1,6 @@
 import { format } from "date-fns"
+import { deleteEmployee } from "../features/employees/employeeSlice"
+import { useDispatch } from "react-redux"
 
 export const COLUMNS = [
     { 
@@ -41,7 +43,7 @@ export const COLUMNS = [
     }
 ]
 
-export const editHooks = hooks => {
+export const useEdit = hooks => {
     hooks.visibleColumns.push(columns => [
         ...columns,
         {
@@ -52,6 +54,26 @@ export const editHooks = hooks => {
                     console.log(row.values)
                 }}>
                     Edit
+                </button>
+            )}
+        }
+    ])
+}
+
+export const useDelete = hooks => {
+
+    const dispatch = useDispatch()
+
+    hooks.visibleColumns.push(columns => [
+        ...columns,
+        {
+            id: "Delete",
+            Header: "Delete",
+            Cell: ({ row }) => {return (
+                <button onClick={() => {
+                    dispatch(deleteEmployee(row.values))
+                }}>
+                    Delete
                 </button>
             )}
         }

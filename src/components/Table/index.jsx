@@ -3,12 +3,14 @@ import {useTable, useSortBy, useGlobalFilter, usePagination} from 'react-table'
 import { useSelector } from 'react-redux'
 import { COLUMNS } from "../../services/const.js"
 import SearchBar from "../SearchBar"
-import { editHooks } from '../../services/const.js'
+import { useEdit, useDelete } from '../../services/const.js'
 
 export const EmployeesTable = () => {
 
-    const employeesDatas = useSelector(state => state.employees)
-    const [data, setData] = useState(useMemo(() => employeesDatas, [employeesDatas]))
+
+    /*const employeesDatas = useSelector(state => state.employees)
+    const [data, setData] = useState(useMemo(() => employeesDatas, [employeesDatas]))*/
+    const data = useSelector(state => state.employees)
     const columns = useMemo(() => COLUMNS, [])
 
     const { 
@@ -34,7 +36,8 @@ export const EmployeesTable = () => {
     useGlobalFilter,
     useSortBy,
     usePagination,
-    editHooks)
+    useEdit,
+    useDelete)
 
     const { pageIndex, pageSize, globalFilter } = state
     
