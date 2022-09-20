@@ -40,3 +40,20 @@ export const COLUMNS = [
         accessor: 'zipCode'
     }
 ]
+
+export const editHooks = hooks => {
+    hooks.visibleColumns.push(columns => [
+        ...columns,
+        {
+            id: "Edit",
+            Header: "Edit",
+            Cell: ({ row }) => {return (
+                <button onClick={() => {
+                    console.log(row.values)
+                }}>
+                    Edit
+                </button>
+            )}
+        }
+    ])
+}
