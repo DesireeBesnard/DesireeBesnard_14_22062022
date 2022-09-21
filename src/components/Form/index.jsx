@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect } from "react"
 import { useDispatch } from "react-redux";
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css";
@@ -27,7 +27,6 @@ function Form() {
     const [zipCode, setZipCode] = useState("")
     const [department, setDepartment] = useState("")
 
-
     useEffect(() => {
 
         getStateOptions()
@@ -51,6 +50,7 @@ function Form() {
             zipCode: zipCode
         }
         dispatch(addEmployee(newEmployee))
+        e.target.reset()
         return newEmployee
     }
 
@@ -121,7 +121,7 @@ function Form() {
                     onClick={() => setShowModal(true)}>Save
                 </button>
                 <Modal show={showModal} handleCloseBtn={() => setShowModal(false)}>
-                    <h1>Hello</h1>
+                    <h1>Employee Created!</h1>
                 </Modal>
 
             </form>

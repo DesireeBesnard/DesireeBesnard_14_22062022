@@ -10,7 +10,6 @@ export const employeesSlice = createSlice({
       state.push(payload.payload)
     },
     deleteEmployee: (state, payload) => {
-      console.log(payload.payload)
       const index = state.findIndex(employee => {
         return employee.firstName === payload.payload.firstName && employee.birthDate === payload.payload.birthDay 
       })
