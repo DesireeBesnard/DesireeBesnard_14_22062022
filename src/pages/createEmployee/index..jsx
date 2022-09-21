@@ -13,7 +13,6 @@ function CreateEmployee() {
                 <h2>Create Employee</h2>
                 < Form />
             </div>
-            <div id="confirmation" className="modal">Employee Created!</div>
         </>
     )
 }

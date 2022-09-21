@@ -7,7 +7,6 @@ import { useEdit, useDelete } from '../../services/const.js'
 
 export const EmployeesTable = () => {
 
-
     /*const employeesDatas = useSelector(state => state.employees)
     const [data, setData] = useState(useMemo(() => employeesDatas, [employeesDatas]))*/
     const data = useSelector(state => state.employees)

@@ -8,12 +8,14 @@ import { getStateOptions } from "../../services/api/stateService";
 import { formatDate } from "../../services/format/formatStateData";
 import "./style.css"
 import { addEmployee } from "../../features/employees/employeeSlice";
+import { Modal } from "@desireeb/react-modal"
 
 
 function Form() {
 
     const dispatch = useDispatch()
     const [stateOptions, setStateOptions] = useState([])
+    const [showModal, setShowModal] = useState(false)
 
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
@@ -24,8 +26,8 @@ function Form() {
     const [state, setState] = useState("")
     const [zipCode, setZipCode] = useState("")
     const [department, setDepartment] = useState("")
-    
-    
+
+
     useEffect(() => {
 
         getStateOptions()
@@ -57,31 +59,31 @@ function Form() {
             <form onSubmit={handleSubmit}>
 
                 <label htmlFor="first-name">First Name</label>
-                <input 
-                    type="text" 
-                    id="first-name" 
-                    onChange={e => setFirstName(e.target.value)} 
+                <input
+                    type="text"
+                    id="first-name"
+                    onChange={e => setFirstName(e.target.value)}
                 />
 
                 <label htmlFor="last-name">Last Name</label>
-                <input 
-                    type="text" 
+                <input
+                    type="text"
                     id="last-name"
                     onChange={e => setLastName(e.target.value)}
                 />
 
                 <label htmlFor="date-of-birth">Date of Birth</label>
-                < DatePicker 
+                < DatePicker
                     selected={birthDate}
-                    onChange={ value => setBirthDate(value)}
+                    onChange={value => setBirthDate(value)}
                     dateFormat="dd/MM/yyyy"
                     showMonthDropdown
                     showYearDropdown
                     dropdownMode="select"
                 />
-                
+
                 <label htmlFor="start-date">Start Date</label>
-                < DatePicker 
+                < DatePicker
                     selected={startDate}
                     onChange={value => setStartDate(value)}
                     dateFormat="dd/MM/yyyy"
@@ -94,14 +96,14 @@ function Form() {
                     <legend>Address</legend>
 
                     <label htmlFor="street">Street</label>
-                    <input id="street" type="text" onChange={e => {setStreet(e.target.value)}} />
+                    <input id="street" type="text" onChange={e => { setStreet(e.target.value) }} />
 
                     <label htmlFor="city">City</label>
                     <input id="city" type="text" onChange={e => setCity(e.target.value)} />
 
                     <label htmlFor="state">State</label>
                     <Select
-                        options={stateOptions}  
+                        options={stateOptions}
                         onChange={value => setState(value.value)}
                     />
 
@@ -110,11 +112,18 @@ function Form() {
                 </fieldset>
 
                 <label htmlFor="department">Department</label>
-                    <Select 
-                        options={departmentOptions}
-                        onChange={value => setDepartment(value.value)}
-                    />
-                <button disabled={!firstName || !lastName || !birthDate || !startDate || !street || !city || !state || !zipCode || !department ? true : false}>Save</button>
+                <Select
+                    options={departmentOptions}
+                    onChange={value => setDepartment(value.value)}
+                />
+                <button
+                    disabled={!firstName || !lastName || !birthDate || !startDate || !street || !city || !state || !zipCode || !department ? true : false}
+                    onClick={() => setShowModal(true)}>Save
+                </button>
+                <Modal show={showModal} handleCloseBtn={() => setShowModal(false)}>
+                    <h1>Hello</h1>
+                </Modal>
+
             </form>
         </>
     )
