@@ -1,16 +1,17 @@
-import React, {useState, useMemo} from 'react'
+import React, {useMemo, useState} from 'react'
 import {useTable, useSortBy, useGlobalFilter, usePagination} from 'react-table'
 import { useSelector } from 'react-redux'
-import { COLUMNS } from "../../services/const.js"
+import { COLUMNS } from "../../services/format/const.js"
 import SearchBar from "../SearchBar"
-import { useEdit, useDelete } from '../../services/const.js'
+import { useDelete } from '../../services/format/hooks.js'
+import { Modal } from '@desireeb/react-modal'
 
 export const EmployeesTable = () => {
 
-    /*const employeesDatas = useSelector(state => state.employees)
-    const [data, setData] = useState(useMemo(() => employeesDatas, [employeesDatas]))*/
-    const data = useSelector(state => state.employees)
+    const data = useSelector(state => state.employees.employees)
+
     const columns = useMemo(() => COLUMNS, [])
+    const [showModal, setShowModal] = useState(false)
 
     const { 
         getTableProps, 
@@ -35,7 +36,6 @@ export const EmployeesTable = () => {
     useGlobalFilter,
     useSortBy,
     usePagination,
-    useEdit,
     useDelete)
 
     const { pageIndex, pageSize, globalFilter } = state
@@ -99,6 +99,9 @@ export const EmployeesTable = () => {
                         ))}
                 </select>
             </div>
+            <Modal show={showModal} handleCloseBtn={() => setShowModal(false)}>
+                <h1>Hello!</h1>
+            </Modal>
         </>
     )
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css";
 import Select from "react-select"
@@ -8,19 +8,22 @@ import { getStateOptions } from "../../services/api/stateService";
 import { formatDate } from "../../services/format/formatStateData";
 import "./style.css"
 import { addEmployee } from "../../features/employees/employeeSlice";
+import {isRegistered} from "../../services/helpers.js"
 import { Modal } from "@desireeb/react-modal"
 
 
 function Form() {
 
+    const employees = useSelector(state => state.employees.employees)
     const dispatch = useDispatch()
     const [stateOptions, setStateOptions] = useState([])
     const [showModal, setShowModal] = useState(false)
+    const [successMsg, setSuccessMsg] = useState(false)
 
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
-    const [birthDate, setBirthDate] = useState(new Date())
-    const [startDate, setStartDate] = useState(new Date())
+    const [birthDate, setBirthDate] = useState(null)
+    const [startDate, setStartDate] = useState(null)
     const [street, setStreet] = useState("")
     const [city, setCity] = useState("")
     const [state, setState] = useState("")
@@ -49,9 +52,16 @@ function Form() {
             state: state,
             zipCode: zipCode
         }
-        dispatch(addEmployee(newEmployee))
-        e.target.reset()
-        return newEmployee
+
+        if(!isRegistered(employees, newEmployee)){
+            dispatch(addEmployee(newEmployee))
+            e.target.reset()
+            setSuccessMsg(true)
+            return newEmployee
+        } else {
+            setSuccessMsg(false)
+            return "Employee already registered"
+        }
     }
 
     return (
@@ -61,6 +71,7 @@ function Form() {
                 <label htmlFor="first-name">First Name</label>
                 <input
                     type="text"
+                    placeholder="First Name"
                     id="first-name"
                     onChange={e => setFirstName(e.target.value)}
                 />
@@ -68,6 +79,7 @@ function Form() {
                 <label htmlFor="last-name">Last Name</label>
                 <input
                     type="text"
+                    placeholder="Last Name"
                     id="last-name"
                     onChange={e => setLastName(e.target.value)}
                 />
@@ -75,6 +87,7 @@ function Form() {
                 <label htmlFor="date-of-birth">Date of Birth</label>
                 < DatePicker
                     selected={birthDate}
+                    placeholderText="Select a date"
                     onChange={value => setBirthDate(value)}
                     dateFormat="dd/MM/yyyy"
                     showMonthDropdown
@@ -85,6 +98,7 @@ function Form() {
                 <label htmlFor="start-date">Start Date</label>
                 < DatePicker
                     selected={startDate}
+                    placeholderText="Select a date"
                     onChange={value => setStartDate(value)}
                     dateFormat="dd/MM/yyyy"
                     showMonthDropdown
@@ -96,32 +110,55 @@ function Form() {
                     <legend>Address</legend>
 
                     <label htmlFor="street">Street</label>
-                    <input id="street" type="text" onChange={e => { setStreet(e.target.value) }} />
+                    <input 
+                        id="street" 
+                        placeholder="Street"
+                        type="text" 
+                        onChange={e => { setStreet(e.target.value) }}
+                    />
 
                     <label htmlFor="city">City</label>
-                    <input id="city" type="text" onChange={e => setCity(e.target.value)} />
+                    <input 
+                        id="city" 
+                        placeholder="City"
+                        type="text" 
+                        onChange={e => setCity(e.target.value)}
+                    />
 
                     <label htmlFor="state">State</label>
                     <Select
                         options={stateOptions}
+                        placeholder={'Select a state'}
                         onChange={value => setState(value.value)}
                     />
 
                     <label htmlFor="zip-code">Zip Code</label>
-                    <input id="zip-code" type="number" onChange={e => setZipCode(e.target.value)} />
+                    <input 
+                        id="zip-code" 
+                        placeholder="Zip Code"
+                        type="number" 
+                        min="0"
+                        onChange={e => setZipCode(e.target.value)} 
+                    />
                 </fieldset>
 
                 <label htmlFor="department">Department</label>
                 <Select
                     options={departmentOptions}
+                    placeholder={'Select a department'}
                     onChange={value => setDepartment(value.value)}
                 />
                 <button
-                    disabled={!firstName || !lastName || !birthDate || !startDate || !street || !city || !state || !zipCode || !department ? true : false}
+                    disabled=
+                        { !firstName || !lastName || !birthDate || !startDate || !street || !city || !state || !zipCode || !department ? true : false}
                     onClick={() => setShowModal(true)}>Save
                 </button>
+
                 <Modal show={showModal} handleCloseBtn={() => setShowModal(false)}>
-                    <h1>Employee Created!</h1>
+                    {successMsg
+                        ? <h1>Employee Created!</h1> 
+                        : <h1>Employee already registered!</h1>
+                    }
                 </Modal>
 
             </form>
