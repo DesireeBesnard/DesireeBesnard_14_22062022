@@ -5,6 +5,7 @@ import { COLUMNS } from "../../services/format/const.js"
 import SearchBar from "../SearchBar"
 import { useDelete } from '../../services/format/hooks.js'
 import { Modal } from '@desireeb/react-modal'
+import "./style.css"
 
 export const EmployeesTable = () => {
 

@@ -11,7 +11,7 @@ export const useDelete = hooks => {
             id: "Delete",
             Header: "Delete",
             Cell: ({ row }) => {return (
-                <button onClick={() => {
+                <button className="primary" onClick={() => {
                     dispatch(deleteEmployee(row.values))
                 }}>
                     Delete

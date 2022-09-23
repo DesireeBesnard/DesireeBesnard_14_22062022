@@ -145,13 +145,13 @@ function Form() {
                     onChange={value => setDepartment(value.value)}
                 />
                 <button 
-                    className="submitBtn"
+                    className="primary"
                     disabled=
                         { !firstName || !lastName || !birthDate || !startDate || !street || !city || !state || !zipCode || !department ? true : false}
                     onClick={() => setShowModal(true)}>Save
                 </button>
 
-                <Modal show={showModal} handleCloseBtn={() => setShowModal(false)}>
+                <Modal className="modal" show={showModal} handleCloseBtn={() => setShowModal(false)}>
                     {successMsg
                         ? <h1>Employee Created!</h1> 
                         : <h1>Employee already registered!</h1>

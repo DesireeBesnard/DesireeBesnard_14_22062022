@@ -13,8 +13,8 @@ const Header = () => {
         <header>
             <h1 className="">HRnet</h1>
             {pageStatus
-                ? <Link to={"/employeeList"}><button onClick={() => dispatch(changePageStatus(pageStatus))}>View Employees</button></Link>
-                : <Link to={"/"}><button onClick={() => dispatch(changePageStatus(pageStatus))}>Back</button></Link>
+                ? <Link to={"/employeeList"}><button className='primary' onClick={() => dispatch(changePageStatus(pageStatus))}>View Employees</button></Link>
+                : <Link to={"/"}><button className='primary' onClick={() => dispatch(changePageStatus(pageStatus))}>Back</button></Link>
             }
         </header>
   )
