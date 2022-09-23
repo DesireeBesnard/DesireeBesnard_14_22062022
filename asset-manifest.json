@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/DesireeBesnard_14_22062022/static/css/main.b4cd7ee2.css",
+    "main.js": "/DesireeBesnard_14_22062022/static/js/main.3101137a.js",
+    "static/js/787.8be201f2.chunk.js": "/DesireeBesnard_14_22062022/static/js/787.8be201f2.chunk.js",
+    "index.html": "/DesireeBesnard_14_22062022/index.html",
+    "main.b4cd7ee2.css.map": "/DesireeBesnard_14_22062022/static/css/main.b4cd7ee2.css.map",
+    "main.3101137a.js.map": "/DesireeBesnard_14_22062022/static/js/main.3101137a.js.map",
+    "787.8be201f2.chunk.js.map": "/DesireeBesnard_14_22062022/static/js/787.8be201f2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b4cd7ee2.css",
+    "static/js/main.3101137a.js"
+  ]
+}
