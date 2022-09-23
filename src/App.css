@@ -1,0 +1,13 @@
+.App {
+    height: 100vh;
+}
+
+button {
+    height: 50px;
+    padding: 5px 10px;
+}
+
+button a {
+    text-decoration: none;
+    color: black;
+}

@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 //const initialState = []
 const initialState = {
   employees: [],
-  showEditModal: false
+  homePage: true
 }
 
 export const employeesSlice = createSlice({
@@ -13,9 +13,6 @@ export const employeesSlice = createSlice({
     addEmployee: (state, payload) => {
       state.employees.push(payload.payload)
     },
-    showEditModal: (state, payload) => {
-      state.showEditModal = payload.payload
-    },
     deleteEmployee: (state, payload) => {
       const index = state.employees.findIndex(employee => {
         return employee.firstName === payload.payload.firstName && employee.birthDate === payload.payload.birthDay 
@@ -23,9 +20,13 @@ export const employeesSlice = createSlice({
       if(index !== -1) {
         state.employees.splice(index, 1)
       }
+    },
+    changePageStatus: (state, payload) => {
+      //console.log(state.homePage, !payload.payload)
+      state.homePage = !payload.payload
     }
   }
 });
 
-export const { addEmployee, showEditModal, deleteEmployee } = employeesSlice.actions;
+export const { addEmployee, deleteEmployee, changePageStatus } = employeesSlice.actions;
 export default employeesSlice.reducer;

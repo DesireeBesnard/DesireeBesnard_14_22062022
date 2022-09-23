@@ -1,7 +1,7 @@
 label {
     display: block;
-    margin-top: 1rem;
-    margin-bottom: 10px;
+    visibility: hidden;
+    font-size: 5px;
 }
 
 .address {
