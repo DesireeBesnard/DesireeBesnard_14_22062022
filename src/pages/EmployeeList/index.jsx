@@ -7,7 +7,7 @@ function EmployeeList() {
     return (
         <div>
             <h1>Current Employees</h1>
-            {/*<EmployeesTable />*/}
+            <EmployeesTable />
             <button><Link to={"/"}>Retour</Link></button>
         </div>
     )

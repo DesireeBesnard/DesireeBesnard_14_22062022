@@ -87,7 +87,7 @@ function Form() {
                 <label htmlFor="date-of-birth">Date of Birth</label>
                 < DatePicker
                     selected={birthDate}
-                    placeholderText="Select a date"
+                    placeholderText="Birth date"
                     onChange={value => setBirthDate(value)}
                     dateFormat="dd/MM/yyyy"
                     showMonthDropdown
@@ -98,16 +98,13 @@ function Form() {
                 <label htmlFor="start-date">Start Date</label>
                 < DatePicker
                     selected={startDate}
-                    placeholderText="Select a date"
+                    placeholderText="Start date"
                     onChange={value => setStartDate(value)}
                     dateFormat="dd/MM/yyyy"
                     showMonthDropdown
                     showYearDropdown
                     dropdownMode="select"
                 />
-
-                <fieldset className="address">
-                    <legend>Address</legend>
 
                     <label htmlFor="street">Street</label>
                     <input 
@@ -140,7 +137,6 @@ function Form() {
                         min="0"
                         onChange={e => setZipCode(e.target.value)} 
                     />
-                </fieldset>
 
                 <label htmlFor="department">Department</label>
                 <Select
@@ -148,7 +144,8 @@ function Form() {
                     placeholder={'Select a department'}
                     onChange={value => setDepartment(value.value)}
                 />
-                <button
+                <button 
+                    className="submitBtn"
                     disabled=
                         { !firstName || !lastName || !birthDate || !startDate || !street || !city || !state || !zipCode || !department ? true : false}
                     onClick={() => setShowModal(true)}>Save
