@@ -1,19 +1,19 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import CreateEmployee from './pages/createEmployee/index.';
 import Employee from './pages/EmployeeList';
 import './App.css';
 
 function App() {
   return (
-    <Router>
+    <HashRouter>
       <div className="App">
         <Routes>
           <Route path='/' element={<CreateEmployee />}/>
           <Route path='/employeeList' element = {<Employee />} />
         </Routes>
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 
