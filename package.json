@@ -1,8 +1,8 @@
 {
+  "homepage": "https://desireebesnard.github.io/DesireeBesnard_14_22062022",
   "name": "wealth-health",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://DesireeBesnard.github.io/DesireeBesnard_14_22062022",
   "dependencies": {
     "@desireeb/react-modal": "^1.1.2",
     "@reduxjs/toolkit": "^1.8.3",
