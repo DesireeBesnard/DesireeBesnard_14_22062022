@@ -1,0 +1,18 @@
+.employees-container {
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.employees-container > div {
+    background-color: white;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.employees-container h2 {
+    margin: 0 0 60px 0;
+}
