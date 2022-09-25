@@ -28,6 +28,10 @@ form button {
     margin: 30px auto auto auto;
 }
 
+form button:disabled {
+    background-color: gray;
+}
+
 .container h2 {
     margin: 0 0 20px 0;
 }
