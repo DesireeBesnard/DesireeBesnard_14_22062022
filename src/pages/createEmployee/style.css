@@ -24,7 +24,7 @@
     border-radius: 4px;
 }
 
-form button {
+form button:not(.modal-button) {
     margin: 30px auto auto auto;
 }
 

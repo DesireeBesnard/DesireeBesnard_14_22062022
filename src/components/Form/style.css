@@ -13,7 +13,3 @@ form {
     flex-direction: column;
     width: 300px;
 }
-
-.modal{
-    height: 100vh;
-}

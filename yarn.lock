@@ -1260,10 +1260,10 @@
   "resolved" "https://registry.npmjs.org/@csstools/selector-specificity/-/selector-specificity-2.0.2.tgz"
   "version" "2.0.2"
 
-"@desireeb/react-modal@^1.1.2":
-  "integrity" "sha512-8TszVbwQ93ywRCZEz3pE7GG3YYVd24RUqcf1NuQ5WIkARACaj8hh9njBMuGshvCCHyJjFFE4jiGfnURAf1nfLg=="
-  "resolved" "https://registry.npmjs.org/@desireeb/react-modal/-/react-modal-1.1.2.tgz"
-  "version" "1.1.2"
+"@desireeb/react-modal@^1.2.2":
+  "integrity" "sha512-CuvxYTmcwaVxFmfwzZG8Sf38bGs8zg84cJ3el+UxERzOOxpbJik6IMhlyLvE69gdLeiG+fnjQVoTNOL9v/RPvw=="
+  "resolved" "https://registry.npmjs.org/@desireeb/react-modal/-/react-modal-1.2.2.tgz"
+  "version" "1.2.2"
   dependencies:
     "@storybook/addon-docs" "^6.5.12"
 
@@ -2559,9 +2559,9 @@
   "version" "18.0.6"
 
 "@types/node@^14.0.10 || ^16.0.0":
-  "integrity" "sha512-6u+36Dj3aDzhfBVUf/mfmc92OEdzQ2kx2jcXGdigfl70E/neV21ZHE6UCz4MDzTRcVqGAM27fk+DLXvyDsn3Jw=="
-  "resolved" "https://registry.npmjs.org/@types/node/-/node-16.11.59.tgz"
-  "version" "16.11.59"
+  "integrity" "sha512-kYIYa1D1L+HDv5M5RXQeEu1o0FKA6yedZIoyugm/MBPROkLpX4L7HRxMrPVyo8bnvjpW/wDlqFNGzXNMb7AdRw=="
+  "resolved" "https://registry.npmjs.org/@types/node/-/node-16.11.60.tgz"
+  "version" "16.11.60"
 
 "@types/npmlog@^4.1.2":
   "integrity" "sha512-WKG4gTr8przEZBiJ5r3s8ZIAoMXNbOgQ+j/d5O4X3x6kZJRLNvyUJuUK/KoG3+8BaOHPhp2m7WC6JKKeovDSzQ=="
@@ -11939,9 +11939,9 @@
   "version" "0.0.6"
 
 "uglify-js@^3.1.4":
-  "integrity" "sha512-+juFBsLLw7AqMaqJ0GFvlsGZwdQfI2ooKQB39PSBgMnMakcFosi9O8jCwE+2/2nMNcc0z63r9mwjoDG8zr+q0Q=="
-  "resolved" "https://registry.npmjs.org/uglify-js/-/uglify-js-3.17.1.tgz"
-  "version" "3.17.1"
+  "integrity" "sha512-bbxglRjsGQMchfvXZNusUcYgiB9Hx2K4AHYXQy2DITZ9Rd+JzhX7+hoocE5Winr7z2oHvPsekkBwXtigvxevXg=="
+  "resolved" "https://registry.npmjs.org/uglify-js/-/uglify-js-3.17.2.tgz"
+  "version" "3.17.2"
 
 "unbox-primitive@^1.0.2":
   "integrity" "sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw=="

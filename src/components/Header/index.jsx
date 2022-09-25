@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { useSelector, useDispatch } from "react-redux"
 import {Link} from 'react-router-dom' 
 import { changePageStatus} from '../../features/employees/employeeSlice'
@@ -7,14 +7,14 @@ import "./style.css"
 const Header = () => {
 
     const dispatch = useDispatch()
-    const pageStatus = useSelector(state => state.employees.homePage)
- 
+    const isHomePage = useSelector(state => state.employees.homePage)
+
     return (
         <header>
             <h1 className="">HRnet</h1>
-            {pageStatus
-                ? <Link to={"/employeeList"}><button className='primary' onClick={() => dispatch(changePageStatus(pageStatus))}>View Employees</button></Link>
-                : <Link to={"/"}><button className='primary' onClick={() => dispatch(changePageStatus(pageStatus))}>Back</button></Link>
+            {isHomePage
+                ? <Link to={"/employeeList"}><button className='primary' onClick={() => dispatch(changePageStatus(isHomePage))}>View Employees</button></Link>
+                : <Link to={"/"}><button className='primary' onClick={() => dispatch(changePageStatus(isHomePage))}>Back</button></Link>
             }
         </header>
   )

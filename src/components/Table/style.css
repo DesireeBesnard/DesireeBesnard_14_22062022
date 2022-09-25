@@ -11,4 +11,8 @@ th {
 }
  td{
     border-left: 1px solid black;
- }
+}
+
+.modal {
+    background-color: white;
+}

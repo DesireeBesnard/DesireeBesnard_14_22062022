@@ -22,7 +22,6 @@ export const employeesSlice = createSlice({
       }
     },
     changePageStatus: (state, payload) => {
-      //console.log(state.homePage, !payload.payload)
       state.homePage = !payload.payload
     }
   }
