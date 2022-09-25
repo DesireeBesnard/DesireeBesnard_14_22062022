@@ -9,6 +9,7 @@ function EmployeeList() {
     const dispatch = useDispatch()
 
     useEffect(() => {
+        //isHomePage in redux state set to false
         dispatch(changePageStatus(true))
     })
  

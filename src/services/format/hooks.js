@@ -1,6 +1,7 @@
 import { deleteEmployee } from "../../features/employees/employeeSlice"
 import { useDispatch } from "react-redux"
 
+//add Delete button in employees table
 export const useDelete = hooks => {
 
     const dispatch = useDispatch()

@@ -1,5 +1,6 @@
 import { format } from "date-fns"
 
+//Employees table columns
 export const COLUMNS = [
     { 
         Header: 'First Name', 

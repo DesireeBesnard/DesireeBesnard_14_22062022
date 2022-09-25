@@ -2,21 +2,25 @@ import React, { useState, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css";
+
 import Select from "react-select"
 import departmentOptions from "../../data/departments.json"
 import { getStateOptions } from "../../services/api/stateService";
 import { formatDate } from "../../services/format/formatStateData";
-import "./style.css"
-import { addEmployee } from "../../features/employees/employeeSlice";
+
 import {isRegistered} from "../../services/helpers.js"
+import { addEmployee } from "../../features/employees/employeeSlice";
 import { Modal } from "@desireeb/react-modal"
+import "./style.css"
 
 
 function Form() {
 
-    const employees = useSelector(state => state.employees.employees)
     const dispatch = useDispatch()
+
+    const employees = useSelector(state => state.employees.employees)
     const [stateOptions, setStateOptions] = useState([])
+    
     const [showModal, setShowModal] = useState(false)
     const [successMsg, setSuccessMsg] = useState(false)
 

@@ -9,6 +9,7 @@ function CreateEmployee() {
     const dispatch = useDispatch()
 
     useEffect(() => {
+        //isHomePage in redux state set to true
         dispatch(changePageStatus(false))
     })
 

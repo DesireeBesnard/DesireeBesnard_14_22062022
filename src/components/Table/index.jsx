@@ -1,8 +1,8 @@
 import React, {useMemo, useState} from 'react'
-import {useTable, useSortBy, useGlobalFilter, usePagination} from 'react-table'
 import { useSelector } from 'react-redux'
-import { COLUMNS } from "../../services/format/const.js"
+import {useTable, useSortBy, useGlobalFilter, usePagination} from 'react-table'
 import SearchBar from "../SearchBar"
+import { COLUMNS } from "../../services/format/const.js"
 import { useDelete } from '../../services/format/hooks.js'
 import { Modal } from '@desireeb/react-modal'
 import "./style.css"
