@@ -32,6 +32,12 @@ form button:disabled {
     background-color: gray;
 }
 
+form button:disabled:hover {
+    background-color: gray;
+    border: none;
+    color: white;
+}
+
 .container h2 {
     margin: 0 0 20px 0;
 }
